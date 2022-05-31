@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Styles from './Cardapio.module.scss';
-import { ReactComponent as Logo } from '../assets/logo.svg';
+import { ReactComponent as Logo } from 'assets/logo.svg';
 
 const Cardapio: React.FC = () => {
     return <main>
