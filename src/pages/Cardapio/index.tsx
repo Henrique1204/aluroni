@@ -6,6 +6,7 @@ import Styles from "./Cardapio.module.scss";
 
 import Buscador from "./Buscador";
 import Filtros from "./Filtros";
+import Ordernador from "./Ordenador";
 
 const Cardapio: React.FC = () => {
   const [busca, setBusca] = React.useState<string>("");
@@ -27,7 +28,9 @@ const Cardapio: React.FC = () => {
         <Buscador busca={busca} setBusca={setBusca} />
 
         <div className={Styles.cardapio__filtros}>
-            <Filtros filtro={filtro} setFiltro={setFiltro} />
+          <Filtros filtro={filtro} setFiltro={setFiltro} />
+
+          <Ordernador />
         </div>
       </section>
     </main>

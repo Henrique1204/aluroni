@@ -15,6 +15,7 @@ const Buscador: React.FC<IBuscadorProps> = ({ busca, setBusca }) => {
         className={Styles.buscador__input}
         value={busca}
         onChange={({ target }) => setBusca(target.value)}
+        placeholder="Buscar"
       />
 
       <CgSearch size={20} color="#4C4D5E" />
