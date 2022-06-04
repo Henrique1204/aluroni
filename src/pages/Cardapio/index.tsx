@@ -5,6 +5,7 @@ import { ReactComponent as Logo } from "assets/logo.svg";
 import Styles from "./Cardapio.module.scss";
 
 import Buscador from "./Buscador";
+import Filtros from "./Filtros";
 
 const Cardapio: React.FC = () => {
   const [busca, setBusca] = React.useState<string>("");
@@ -23,6 +24,10 @@ const Cardapio: React.FC = () => {
         <h3 className={Styles.cardapio__titulo}>Cardápio</h3>
 
         <Buscador busca={busca} setBusca={setBusca} />
+
+        <div className={Styles.cardapio__filtros}>
+            <Filtros />
+        </div>
       </section>
     </main>
   );
