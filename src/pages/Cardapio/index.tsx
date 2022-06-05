@@ -12,6 +12,8 @@ const Cardapio: React.FC = () => {
   const [busca, setBusca] = React.useState<string>("");
   const [filtro, setFiltro] = React.useState<number | null>(null);
 
+  const [ordenador, setOrdenador] = React.useState<string>("");
+
   return (
     <main>
       <nav className={Styles.menu}>
@@ -30,7 +32,7 @@ const Cardapio: React.FC = () => {
         <div className={Styles.cardapio__filtros}>
           <Filtros filtro={filtro} setFiltro={setFiltro} />
 
-          <Ordernador />
+          <Ordernador value={ordenador} onChange={setOrdenador} />
         </div>
       </section>
     </main>
