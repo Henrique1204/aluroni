@@ -1,0 +1,128 @@
+@import "styles";
+
+$massas: #d73b3b;
+$carnes: #30201e;
+$combos: #e6c864;
+$veganos: #80aa40;
+
+.item {
+  width: 90%;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  &__imagem {
+    min-width: 240px;
+
+    img {
+      border-radius: 8px;
+      width: 100%;
+    }
+
+    @media (max-width: $desktop_xsm) {
+      width: 100%;
+    }
+  }
+
+  &__descricao {
+    padding: 0 20px;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+    flex: 1;
+
+    @media (max-width: $desktop_xsm) {
+      margin-top: 20px;
+      padding: 0;
+
+      flex-direction: row;
+    }
+  }
+
+  &__titulo {
+    h2 {
+      margin-bottom: 20px;
+
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    p {
+      max-width: 600px;
+      margin-bottom: 20px;
+
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: $dark-grey;
+    }
+  }
+
+  &__tags {
+    max-width: 700px;
+    margin-bottom: 20px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @media (max-width: $desktop_xsm) {
+      justify-content: flex-end;
+    }
+
+    @media (max-width: $mobile) {
+      justify-content: flex-start;
+    }
+
+    & > div {
+      margin: 10px;
+    }
+  }
+
+  &__tipo {
+    height: 40px;
+    padding: 10px 30px;
+    border-radius: 2px;
+
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__massas {
+      color: white;
+      background-color: $massas;
+    }
+
+    &__carnes {
+      color: white;
+      background-color: $carnes;
+    }
+
+    &__combos {
+      background-color: $combos;
+    }
+
+    &__veganos {
+      background-color: $veganos;
+    }
+  }
+
+  &__porcao,
+  &__qtdpessoas,
+  &__valor {
+    font-size: 1.25rem;
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__valor {
+    font-size: 1.7rem;
+    color: $red;
+  }
+}

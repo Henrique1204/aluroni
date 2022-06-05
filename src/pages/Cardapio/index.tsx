@@ -7,6 +7,7 @@ import Styles from "./Cardapio.module.scss";
 import Buscador from "./Buscador";
 import Filtros from "./Filtros";
 import Ordernador from "./Ordenador";
+import Itens from "./Itens";
 
 const Cardapio: React.FC = () => {
   const [busca, setBusca] = React.useState<string>("");
@@ -34,6 +35,8 @@ const Cardapio: React.FC = () => {
 
           <Ordernador value={ordenador} onChange={setOrdenador} />
         </div>
+
+        <Itens />
       </section>
     </main>
   );
