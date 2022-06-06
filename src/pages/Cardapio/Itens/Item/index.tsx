@@ -3,6 +3,7 @@ import React from "react";
 import logo from "assets/logo.svg";
 
 import Styles from "./Item.module.scss";
+import classNames from "classnames";
 
 interface ICategoryItem {
   id: number;
@@ -48,7 +49,14 @@ const Item: React.FC<IItemProps> = ({
         </div>
 
         <div className={Styles.item__tags}>
-          <div className={Styles.item__tipo}>{category.label}</div>
+          <div
+            className={classNames({
+              [Styles.item__tipo]: true,
+              [Styles[`item__tipo__${category.label.toLowerCase()}`]]: true,
+            })}
+          >
+            {category.label}
+          </div>
 
           <div className={Styles.item__porcao}>{size}g</div>
 
