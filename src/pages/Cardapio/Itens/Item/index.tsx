@@ -20,11 +20,25 @@ interface IItemProps {
   category: ICategoryItem;
 }
 
-const Item: React.FC<IItemProps> = ({ title, photo, description }) => {
+const Item: React.FC<IItemProps> = ({
+  title,
+  photo,
+  description,
+  category,
+  size,
+  serving,
+  price,
+}) => {
   return (
     <div className={Styles.item}>
       <div className={Styles.item__imagem}>
-        <img src={logo} alt="Aluroni" />
+        <img
+          src={photo}
+          alt={title}
+          onError={({ currentTarget }) =>
+            currentTarget.setAttribute("src", logo)
+          }
+        />
       </div>
 
       <div className={Styles.item__descricao}>
@@ -34,13 +48,15 @@ const Item: React.FC<IItemProps> = ({ title, photo, description }) => {
         </div>
 
         <div className={Styles.item__tags}>
-          <div className={Styles.item__tipo}>Massa</div>
+          <div className={Styles.item__tipo}>{category.label}</div>
 
-          <div className={Styles.item__porcao}>400g</div>
+          <div className={Styles.item__porcao}>{size}g</div>
 
-          <div className={Styles.item_qtdpessoas}>Serve 2 pessoas</div>
+          <div className={Styles.item_qtdpessoas}>
+            Serve {serving} pessoa{serving === 1 ? "" : "s"}
+          </div>
 
-          <div className={Styles.item__valor}>R$ 20,00</div>
+          <div className={Styles.item__valor}>R$ {price.toFixed(2)}</div>
         </div>
       </div>
     </div>
