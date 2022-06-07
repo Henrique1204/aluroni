@@ -10,7 +10,7 @@ interface ICategoryItem {
   label: string;
 }
 
-interface IItemProps {
+export interface IItemProps {
   title: string;
   description: string;
   photo: string;
