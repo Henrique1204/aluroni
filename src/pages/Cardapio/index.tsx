@@ -5,13 +5,13 @@ import { ReactComponent as Logo } from "assets/logo.svg";
 import Styles from "./Cardapio.module.scss";
 
 import Buscador from "./Buscador";
-import Filtros from "./Filtros";
+import Filtros, { IFiltro } from "./Filtros";
 import Ordernador from "./Ordenador";
 import Itens from "./Itens";
 
 const Cardapio: React.FC = () => {
   const [busca, setBusca] = React.useState<string>("");
-  const [filtro, setFiltro] = React.useState<number | null>(null);
+  const [filtro, setFiltro] = React.useState<IFiltro>(null);
 
   const [ordenador, setOrdenador] = React.useState<string>("");
 
@@ -36,7 +36,7 @@ const Cardapio: React.FC = () => {
           <Ordernador value={ordenador} onChange={setOrdenador} />
         </div>
 
-        <Itens />
+        <Itens busca={busca} filtro={filtro} ordenador={ordenador} />
       </section>
     </main>
   );

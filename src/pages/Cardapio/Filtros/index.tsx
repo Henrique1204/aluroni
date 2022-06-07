@@ -4,11 +4,13 @@ import classNames from "classnames";
 import Styles from "./Filtros.module.scss";
 import filtrosJson from "./filtros.json";
 
+export type IFiltro = number | null;
+
 type IOpcao = typeof filtrosJson[0];
 
 interface IFiltrosProps {
-  filtro: number | null;
-  setFiltro: React.Dispatch<React.SetStateAction<number | null>>;
+  filtro: IFiltro;
+  setFiltro: React.Dispatch<React.SetStateAction<IFiltro>>;
 }
 
 const Filtros: React.FC<IFiltrosProps> = ({ filtro, setFiltro }) => {
